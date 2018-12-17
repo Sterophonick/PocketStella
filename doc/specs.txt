@@ -1,0 +1,5 @@
+MOS 6507 @ 1.19 MHz
+128 bytes RAM
+4 kb rom, but there are 16 banks, so max 64kb (MUST)
+128 colors palette, 4 colors per scanline, 160x192
+8x128 sprites, 40x192 playfield
