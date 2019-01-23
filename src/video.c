@@ -1,15 +1,10 @@
 #include <libheart.h>
 #include "cpu.h"
+#include "lang.h"
 
-u8 vbuf[160*192];
+u8 videobuffer[160*192] EWRAM_DATA;
 
-void CopyVideoBufferToVRAM()
+void render()
 {
-	for(int y = 0;y<192;y++)
-	{
-		for(int x=0;x<160;x++)
-		{
-			
-		}
-	}
+	videobuffer[0] = 0x1F;
 }
