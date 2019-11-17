@@ -17,5 +17,21 @@ void a26Init()
 
 void emuMain()
 {
-	
+	while(1)
+	{
+		//a26Execute();
+		if(keyDown(KEY_L))
+		{
+			if(keyDown(KEY_R))
+				emuMenu();
+		}
+	}
+}
+
+void a26TIA()
+{
+	if(memory[0])
+	{
+		hrt_VblankIntrWait();
+	}
 }

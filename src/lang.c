@@ -9,9 +9,7 @@ extern void emuMenuExit();
 extern void emuMenuDisplayBrightness();
 extern void emuMenu();
 extern void emuMenuControllerAAuto();
-extern void emuMenuControllerBAuto();
-extern void emuMenuControllerAKey();
-extern void emuMenuControllerBKey();
+extern void emuMenuControllerMode();
 
 void (*emuMenuMainOptions[])(void) = {
 	emuMenuControls,
@@ -28,10 +26,7 @@ void (*emuMenuDisplayOptions[])(void) = {
 };
 
 void (*emuMenuControllerOptions[])(void) = {
-	emuMenuControllerAKey,
-	emuMenuControllerBKey,
 	emuMenuControllerAAuto,
-	emuMenuControllerBAuto,
 	emuMenu,
 };
 

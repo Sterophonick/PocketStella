@@ -80,10 +80,7 @@ void emuMenuControls()
 	emuMenuHelperFadeOut();
 	hrt_ClearTiledText();
 	emuMenuHelperLoadMenu(gl_controller_options, 5);
-	hrt_PrintOnTilemap(8, 7, gl_keypad_options[PocketStella->a_key]);
-	hrt_PrintOnTilemap(8, 8, gl_keypad_options[PocketStella->b_key]);
-	hrt_PrintOnTilemap(13, 9, gl_autofire_options[PocketStella->a_auto]);
-	hrt_PrintOnTilemap(13, 10, gl_autofire_options[PocketStella->b_auto]);
+	hrt_PrintOnTilemap(8, 7, gl_keypad_options[PocketStella->a_auto]);
 	emuMenuHelperFadeIn();
 	hrt_GetPad(&keypad);
 	while(!hrt_IsKeyPressed(B))
@@ -133,22 +130,6 @@ void emuMenuExit()
 	hrt_EZ4Exit();
 }
 
-void emuMenuControllerAKey()
-{
-	PocketStella->a_key++;
-	if(PocketStella->a_key > 11)
-		PocketStella->a_key = 0;
-	hrt_PrintOnTilemap(8, 7, gl_keypad_options[PocketStella->a_key]);
-}
-
-void emuMenuControllerBKey()
-{
-	PocketStella->b_key++;
-	if(PocketStella->b_key > 11)
-		PocketStella->b_key = 0;
-	hrt_PrintOnTilemap(8, 8, gl_keypad_options[PocketStella->b_key]);
-}
-
 void emuMenuControllerAAuto()
 {
 	PocketStella->a_auto++;
@@ -157,12 +138,9 @@ void emuMenuControllerAAuto()
 	hrt_PrintOnTilemap(13, 9, gl_autofire_options[PocketStella->a_auto]);
 }
 
-void emuMenuControllerBAuto()
+void emuMenuControllerMode()
 {
-	PocketStella->b_auto++;
-	if(PocketStella->b_auto > 2)
-		PocketStella->b_auto = 0;
-	hrt_PrintOnTilemap(13, 10, gl_autofire_options[PocketStella->b_auto]);
+
 }
 
 void emuMenuDisplayBrightness()

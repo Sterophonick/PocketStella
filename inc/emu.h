@@ -1,14 +1,12 @@
 typedef struct
 {
-	u8 a_key;
-	u8 b_key;
 	u8 brightness;
-	u8 vsync;
-	u8 firstboot;
+	u8 controller;
+	u8 dspmode;
 	u8 a_auto;
-	u8 b_auto;
+	u8 vsync;
 }emu;
-extern emu* Advcadia;
+extern emu* PocketStella;
 extern void emuMenu();
 extern u8 CopyVRAM;
 
