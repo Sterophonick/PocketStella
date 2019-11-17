@@ -1,5 +1,5 @@
 HEADERS =
-OBJECTS = build/main.o build/m6502.o build/menu.o build/lang.o build/keypad.o build/m6502.out build/video.o build/memory.o build/palette.o build/rom.o
+OBJECTS = build/main.o build/m6502.o build/lang.o build/emu.o build/sound.o build/vmachine.o build/vram.o
 CPPFILES =
 # SOURCES = src/main.c src/mem.c src/cpu.c src/hardware.c src/keypad.c
 ASM =

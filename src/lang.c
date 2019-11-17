@@ -1,35 +1,69 @@
-const char *gl_main_menu_options[9] = {
+extern void emuMenuHelp();
+extern void emuMenuControls();
+extern void emuMenuDisplay();
+extern void emuMenuOther();
+extern void emuMenuReset();
+extern void emuMenuSleep();
+extern void emuMenuBack();
+extern void emuMenuExit();
+extern void emuMenuDisplayBrightness();
+extern void emuMenu();
+extern void emuMenuControllerAAuto();
+extern void emuMenuControllerBAuto();
+extern void emuMenuControllerAKey();
+extern void emuMenuControllerBKey();
+
+void (*emuMenuMainOptions[])(void) = {
+	emuMenuControls,
+	emuMenuDisplay,
+	emuMenuHelp,
+	emuMenuSleep,
+	emuMenuReset,
+	emuMenuExit,
+};
+
+void (*emuMenuDisplayOptions[])(void) = {
+	emuMenuDisplayBrightness,
+	emuMenu,
+};
+
+void (*emuMenuControllerOptions[])(void) = {
+	emuMenuControllerAKey,
+	emuMenuControllerBKey,
+	emuMenuControllerAAuto,
+	emuMenuControllerBAuto,
+	emuMenu,
+};
+
+const char *gl_main_menu_options[6] = {
 	"Controller->",
 	"Display->",
-	"Other settings->", 
-	"Save State",
-	"Load State",
-	"Help->",
-	"Sleep",
-	"Reset game",
-	"Exit"
+	//"Other settings->", //Almost complete
+	"Help->", //Complete
+	"Sleep", //Complete.. ?
+	"Reset game", //Complete
+	"Exit" //Almost complete
 };
 
 const char gl_credit_ln0[] = "GBA Lives! 2019";
 const char gl_credit_ln1[] = "PocketStella 0.0";
 
-const char *gl_controller_options[2] = {
-	"Reconfigure Controls->",
+const char *gl_controller_options[5] = {
+	"A Key: ",
+	"B Key: ",
+	"A Autofire: ",
+	"B Autofire: ",
 	"<-Back",
 };
 
-const char *gl_display_options[4] = {
-	"Palette: ",
+const char *gl_display_options[2] = {
 	"Brightness: ",
-	"Double size: ",
 	"<-Back",
 };
 
-const char *gl_other_options[5] = {
+const char *gl_other_options[3] = {
 	"VSync: ",
 	"Autosleep: ",
-	"Swap A-B: ",
-	"Sound: ",
 	"<-Back",
 };
 
@@ -53,19 +87,18 @@ const char *gl_autosleep_options[5] = {
 };
 
 const char *gl_help_text[10] = {
-	"PocketStella - A26 Emu 4 GBA",
+	"PocketStella - A26 Emu",
 	"by Sterophonick",
 	"",
 	"Credits:",
-	"",
-	"",
+	"MAMEDev",
 	"Dwedit",
 	"FluBBa",
 	"Loopy",
 	"Kuwanger"
 };
 
-const char gl_exception[] = "PocketStella has crashed!";
+const char gl_exception[] = "Advcadia has crashed!";
 
 const char *gl_exception_types[4] = {
 	"CPU Crash Instruction",
@@ -83,61 +116,25 @@ const char *gl_menu_titles[6] = {
 	"Reconfigure controls"
 };
 
-const char *gl_keypad_menu[4] = {
+const char *gl_keypad_menu[3] = {
 	"A: ",
-	"Select: ",
-	"Start: ",
+	"B: "
 	"<-Back",
 };
 
-const char *gl_keypad_options[16] = {
-	"0",
-	"1",
-	"2",
-	"3",
-	"4",
-	"5",
-	"6",
-	"7",
-	"8",
-	"9",
-	"A",
-	"B",
-	"C",
-	"D",
-	"E",
-	"F",
-};
-
-const char *gl_palettes[7] = {
-	"B/W   ",
-	"Red   ",
-	"Blue  ",
-	"Yellow",
-	"Purple",
-	"Sepia ",
-	"DMG   ",
-};
-
-const unsigned short gl_clock_speeds[8] = {
-	7,
-	15,
-	20,
-	30,
-	100,
-	200,
-	500,
-	1000,
-};
-
-const unsigned short palettes[14] = {
-	0x18C6, 0xFFFF, // B/W
-	0x000C, 0x5EFF, // Red
-	0x3000, 0x7F17, // Blue
-	0x018B, 0x5FFF, // Yellow
-	0x3008, 0x7EFD, //Purple
-	0x010C, 0x5FBF, //Sepia
-	0x1CE3, 0x53BA //DMG
+const char *gl_keypad_options[12] = {
+	"0    ",
+	"1    ",
+	"2    ",
+	"3    ",
+	"4    ",
+	"5    ",
+	"6    ",
+	"7    ",
+	"8    ",
+	"9    ",
+	"Enter",
+	"Clear"
 };
 
 const char *gl_vsync_options[3] = {
@@ -146,14 +143,18 @@ const char *gl_vsync_options[3] = {
 	"Slowmo",
 };
 
+const char *gl_autofire_options[3] = {
+	"Off   ",
+	"On    ",
+	"With R",
+};
+
 const unsigned long gl_autosleep_times[4] = {
 	100,
 	36000,
 	54000,
 	72000,
 };
-
-const char gl_request_ext[]="Exit requested, quitting now.";
 
 const char *gl_brightness_options[5] = {
 	"|    ",

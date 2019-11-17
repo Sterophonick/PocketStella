@@ -1,4 +1,4 @@
-//MOS Technology 6502 simulation
+//Tile to VRAM conversion
 #include <libheart.h>
 #include "lang.h"
 #include "emu.h"
@@ -7,7 +7,7 @@
 #include "m6502.h"
 #include "vmachine.h"
 
-void a26Execute()
+void a26Render()
 {
 	
 }
