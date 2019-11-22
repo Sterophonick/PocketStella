@@ -1,8 +1,15 @@
-extern u8 a26AC;
-extern u8 a26X;
-extern u8 a26Y;
-extern u16 a26PC;
-extern u8 a26SR;
-extern u8 a26SP;
+#define  sysVia  1
+#define  userVia 2
 
-extern void a26Execute();
+extern int programCounter;
+extern int accumulator;
+extern int XReg;
+extern int YReg;
+//extern int PSR;
+extern int stack;
+extern int intStatus;
+// never returns...
+void a26Execute(void);
+
+// this isn't really an int, but a struct
+extern int Asm6502State;

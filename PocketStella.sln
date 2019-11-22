@@ -3,6 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{61D6E35B-DDDB-43EC-A8BD-BC65A94689B9}"
+	ProjectSection(SolutionItems) = preProject
+		src\6502.S = src\6502.S
+		src\emu.c = src\emu.c
+		src\lang.c = src\lang.c
+		src\main.c = src\main.c
+		src\sound.c = src\sound.c
+		src\vmachine.c = src\vmachine.c
+		src\vram.c = src\vram.c
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "inc", "inc", "{F958D095-B16D-4AB6-9379-F5A7935D4A8C}"
+	ProjectSection(SolutionItems) = preProject
+		inc\6502macros.h = inc\6502macros.h
+		inc\emu.h = inc\emu.h
+		inc\lang.h = inc\lang.h
+		inc\m6502.h = inc\m6502.h
+		inc\sound.h = inc\sound.h
+		inc\vmachine.h = inc\vmachine.h
+		inc\vram.h = inc\vram.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{FC3C74C0-274A-4B20-924A-A8634539C42A}"
+	ProjectSection(SolutionItems) = preProject
+		Makefile = Makefile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
